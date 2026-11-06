@@ -1,0 +1,94 @@
+/* Newsletter.css — Figma 뉴스레터 (544:5671)
+   모바일 기본(기기=모바일) → 768px 이상(기기=데스크탑) */
+
+.newsletter {
+  position: relative;
+  width: 100%;
+  background-color: var(--white);
+}
+
+.newsletter__view {
+  overflow: hidden;
+}
+
+.newsletter__track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.newsletter__item {
+  flex: 0 0 100%;
+}
+
+/* 기기=모바일 — 카드 글자 mobile/H2 (20px) */
+.newsletter .d-news-card__body {
+  font-size: var(--mobile-h2-font-size);
+  font-weight: var(--mobile-h2-font-weight);
+  line-height: var(--mobile-h2-line-height);
+}
+
+/* 더보기카드 — 검정 동그라미 화살표 + "더보기" */
+.newsletter__more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--space-20) + var(--space-10)); /* 30px */
+  height: 27.75rem; /* 444px — 뉴스 카드와 같은 높이 */
+  background-color: var(--white);
+  color: var(--color-text-primary);
+}
+
+.newsletter__more-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem; /* 24px */
+  height: 1.5rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--grey-900);
+}
+
+/* 왼쪽 화살표를 뒤집어 "다음" 방향으로 */
+.newsletter__more-icon img {
+  width: 1.5rem;
+  height: 1.5rem;
+  transform: scaleX(-1);
+}
+
+.newsletter__more-label {
+  padding: var(--space-12);
+  font-size: var(--mobile-h1-font-size); /* Figma mobile/H1 (24px) — 두 기기 공통 */
+  font-weight: var(--mobile-h1-font-weight);
+  line-height: var(--mobile-h1-line-height);
+}
+
+/* 이전/다음 버튼 — Figma 위에서 234px */
+.newsletter__prev,
+.newsletter__next {
+  position: absolute;
+  top: 14.625rem; /* 234px */
+}
+
+.newsletter__prev {
+  left: 0.125rem; /* 2px */
+}
+
+.newsletter__next {
+  right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .newsletter__track {
+    transition: none;
+  }
+}
+
+/* 기기=데스크탑 — 카드 글자 desktop/H2 (28px) */
+@media (min-width: 768px) {
+  .newsletter .d-news-card__body {
+    font-size: var(--desktop-h2-font-size);
+    font-weight: var(--desktop-h2-font-weight);
+    line-height: var(--desktop-h2-line-height);
+  }
+}

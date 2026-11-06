@@ -1,0 +1,42 @@
+/* SortButton.css — Figma 정렬버튼 (248:5180) */
+
+.sort-button {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: var(--desktop-cta-font-size);
+  font-weight: var(--desktop-cta-font-weight);
+  line-height: var(--desktop-cta-line-height);
+}
+
+/* 정렬 : 종료 임박순 */
+.sort-button__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4); /* ※ Figma 5px — 토큰에 없어 --space-4 사용 */
+  min-height: 3.75rem; /* 60px */
+  padding-inline: var(--space-20);
+  border: 1px solid var(--grey-600);
+  border-radius: var(--radius-pill);
+  background-color: var(--white);
+  color: var(--grey-600);
+  white-space: nowrap;
+}
+
+/* 정렬 목록 상자
+   ※ Figma 테두리 0.3px — 화면 표시 한계로 1px --grey-100 사용 */
+.sort-button__list {
+  display: flex;
+  flex-direction: column;
+  padding-block: var(--space-20);
+  border: 1px solid var(--grey-100);
+  border-top: 0;
+  background-color: var(--white);
+}
+
+.sort-button__option {
+  width: 100%;
+  padding: var(--space-20) var(--space-10);
+  color: var(--color-text-secondary);
+}

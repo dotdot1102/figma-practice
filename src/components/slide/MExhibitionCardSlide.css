@@ -1,0 +1,42 @@
+/* MExhibitionCardSlide.css — Figma m/전시카드 슬라이드 (595:6447) */
+
+.m-exhibition-card-slide {
+  position: relative;
+  width: 100%;
+  background-color: var(--white);
+}
+
+/* 보이는 창 — 카드 1장 너비만 보여 줌 */
+.m-exhibition-card-slide__view {
+  overflow: hidden;
+}
+
+.m-exhibition-card-slide__track {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.m-exhibition-card-slide__item {
+  flex: 0 0 100%;
+}
+
+/* 이전/다음 버튼 — Figma 위에서 168px, 좌우 끝 */
+.m-exhibition-card-slide__prev,
+.m-exhibition-card-slide__next {
+  position: absolute;
+  top: 10.5rem; /* 168px */
+}
+
+.m-exhibition-card-slide__prev {
+  left: 0;
+}
+
+.m-exhibition-card-slide__next {
+  right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .m-exhibition-card-slide__track {
+    transition: none;
+  }
+}

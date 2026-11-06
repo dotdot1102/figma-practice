@@ -1,0 +1,60 @@
+/* CurrentExhibitionCard.css — Figma 현재전시카드 (279:4062) */
+
+.current-exhibition-card {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  color: var(--color-text-primary);
+}
+
+/* 사진 칸 — 남은 너비를 모두 차지, 사진이 없으면 연파랑 */
+.current-exhibition-card__image {
+  flex: 1 0 0;
+  min-width: 0;
+  overflow: hidden;
+  background-color: var(--color-reservation-stroke);
+}
+
+.current-exhibition-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.current-exhibition-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  padding: var(--space-20);
+}
+
+.current-exhibition-card__title {
+  padding-block: var(--space-20);
+  font-size: var(--desktop-h1-font-size);
+  font-weight: var(--desktop-h1-font-weight);
+  line-height: var(--desktop-h1-line-height);
+  white-space: nowrap;
+}
+
+/* 항목 이름(굵게) | 내용(중간 굵기) — 내용 시작 위치를 맞추려고 표 형태로 정렬 */
+.current-exhibition-card__details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: var(--space-20);
+  column-gap: calc(var(--space-20) * 2); /* 40px */
+  font-size: var(--desktop-h2-font-size);
+  line-height: var(--desktop-h2-line-height);
+  white-space: nowrap;
+}
+
+.current-exhibition-card__row {
+  display: contents;
+}
+
+.current-exhibition-card__row dt {
+  font-weight: var(--desktop-h2-font-weight);
+}
+
+.current-exhibition-card__row dd {
+  font-weight: var(--desktop-gnb-font-weight);
+}

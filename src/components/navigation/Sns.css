@@ -1,0 +1,19 @@
+/* Sns.css — Figma sns (499:12555) */
+
+.sns {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-10);
+}
+
+.sns__link {
+  position: relative;
+  display: block;
+}
+
+/* 터치 영역을 넓힘 (보이는 크기는 그대로) */
+.sns__link::before {
+  content: '';
+  position: absolute;
+  inset: calc(var(--space-4) * -1.5); /* 6px */
+}

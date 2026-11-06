@@ -1,0 +1,15 @@
+/* SubwayLine.css — Figma 전철노선 (270:6043) */
+
+.subway-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem; /* 40px */
+  height: 2.5rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--blue-900); /* ※ Figma 색 #024985는 토큰에 없어 --blue-900 사용 */
+  color: var(--white);
+  font-size: var(--mobile-h1-font-size);
+  font-weight: var(--mobile-h1-font-weight);
+  line-height: var(--mobile-h1-line-height);
+}

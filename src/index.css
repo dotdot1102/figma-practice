@@ -1,0 +1,6 @@
+/* 스타일 진입점 — 순서 유지: 폰트 → 토큰 → 리셋 → 전역 → 타이포 */
+@import './styles/fonts.css';
+@import './styles/tokens.css';
+@import './styles/reset.css';
+@import './styles/global.css';
+@import './styles/typography.css';

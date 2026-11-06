@@ -1,0 +1,12 @@
+/* MCurrentExhibitionList.css — Figma m/현재전시/목록 (270:5718) */
+
+.m-current-exhibition-list {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* 탭 다섯 칸을 같은 너비로 */
+.m-current-exhibition-list > .m-exhibition-gnb {
+  flex: 1 0 0;
+}

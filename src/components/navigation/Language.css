@@ -1,0 +1,24 @@
+/* Language.css — Figma 언어 (220:4299) */
+
+.language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-10);
+  color: var(--color-text-secondary);
+  font-size: var(--desktop-cta-font-size);
+  font-weight: var(--desktop-cta-font-weight);
+  line-height: var(--desktop-cta-line-height);
+  white-space: nowrap;
+}
+
+/* 호버 — 파란 배경 + 흰 글자
+   ※ Figma 색 #0e6beb는 토큰에 없어 --blue-800 사용 */
+@media (hover: hover) {
+  .language:hover {
+    background-color: var(--blue-800);
+    color: var(--white);
+  }
+}

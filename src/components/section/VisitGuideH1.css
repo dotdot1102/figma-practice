@@ -1,0 +1,16 @@
+/* VisitGuideH1.css — Figma 관람안내H1 (255:5334) */
+
+.visit-guide-h1 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  padding: var(--space-20);
+  color: var(--color-text-primary);
+  font-size: var(--desktop-h2-font-size);
+  font-weight: var(--desktop-h2-font-weight);
+  line-height: var(--desktop-h2-line-height);
+}
+
+.visit-guide-h1 img {
+  flex-shrink: 0;
+}

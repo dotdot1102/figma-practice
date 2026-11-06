@@ -1,0 +1,42 @@
+/* CurrentExhibitionMenuBar.css — Figma 현재전시메뉴바 (820:12526) */
+
+.current-exhibition-menu-bar {
+  position: relative;
+  width: 100%;
+}
+
+/* 가로로 넘겨 보는 영역 (스크롤바는 숨김, 손가락으로 밀어도 이동) */
+.current-exhibition-menu-bar__view {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.current-exhibition-menu-bar__view::-webkit-scrollbar {
+  display: none;
+}
+
+/* 탭 목록 전체 너비 — Figma 830px */
+.current-exhibition-menu-bar__view > .m-current-exhibition-list {
+  width: auto;
+  min-width: 51.875rem;
+  min-height: 4.3125rem; /* 69px */
+}
+
+/* 좌우 화살표 — 목록 위에 겹쳐서 양 끝에 표시 */
+.current-exhibition-menu-bar__arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  width: 1.5rem; /* 24px */
+  background-color: var(--white);
+}
+
+.current-exhibition-menu-bar__arrow--prev {
+  left: 0;
+}
+
+.current-exhibition-menu-bar__arrow--next {
+  right: 0;
+}

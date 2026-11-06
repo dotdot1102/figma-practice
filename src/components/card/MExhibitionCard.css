@@ -1,0 +1,63 @@
+/* MExhibitionCard.css — Figma m/전시카드 (260:4058) */
+
+.m-exhibition-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  width: 100%;
+  padding: var(--space-16);
+  color: var(--color-text-primary);
+}
+
+/* 사진 칸 — 사진이 없으면 회색 */
+.m-exhibition-card__image {
+  height: 11.5rem; /* 184px */
+  overflow: hidden;
+  background-color: var(--color-text-sub);
+}
+
+.m-exhibition-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.m-exhibition-card__badge {
+  padding-inline: var(--space-4);
+}
+
+.m-exhibition-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-inline: var(--space-4);
+  font-size: var(--mobile-body-font-size);
+  font-weight: var(--mobile-body-font-weight);
+  line-height: var(--mobile-body-line-height);
+}
+
+.m-exhibition-card__title {
+  font-size: var(--mobile-h2-font-size);
+  font-weight: var(--mobile-h2-font-weight);
+  line-height: var(--mobile-h2-line-height);
+}
+
+/* 링크 카드 — 제목 링크의 클릭 영역을 카드 전체로 넓힘 */
+.m-exhibition-card--link {
+  position: relative;
+}
+
+.m-exhibition-card__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.m-exhibition-card__link:focus-visible {
+  outline: none;
+}
+
+.m-exhibition-card--link:has(.m-exhibition-card__link:focus-visible) {
+  outline: 2px solid var(--color-reservation-primary);
+  outline-offset: 2px;
+}

@@ -1,0 +1,20 @@
+/* ExhibitionGnb.css — Figma 전시gnb (255:5277) */
+
+.exhibition-gnb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-12);
+  border-bottom: 1px solid transparent;
+  color: var(--hover-hover);
+  font-size: var(--desktop-h2-font-size);
+  font-weight: var(--desktop-h2-font-weight);
+  line-height: var(--desktop-h2-line-height);
+  white-space: nowrap;
+}
+
+/* 선택됨 — 검정 글자 + 검정 밑줄 */
+.exhibition-gnb--selected {
+  border-bottom-color: var(--hover-primary);
+  color: var(--color-text-primary);
+}

@@ -1,0 +1,33 @@
+/* LanguageButton.css — Figma 언어버튼 (220:4330) */
+
+.language-button {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  width: 8.375rem; /* 134px */
+}
+
+/* 지구본 + 아래 화살표 버튼 */
+.language-button__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-10);
+}
+
+.language-button__globe {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+/* 언어 목록 상자
+   ※ Figma 테두리 0.3px 검정 — 토큰·화면 표시 한계로 1px --grey-100 사용 */
+.language-button__list {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-10);
+  border: 1px solid var(--grey-100);
+  background-color: var(--white);
+}

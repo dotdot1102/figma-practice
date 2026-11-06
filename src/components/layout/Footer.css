@@ -1,0 +1,130 @@
+/* Footer.css — Figma m/푸터섹션 (544:11314) · d/푸터섹션 (587:12916)
+   모바일 기본 → 768px 이상 데스크탑 */
+
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* 회색 배경 — 모바일은 위 99px 여백까지 회색 */
+.footer__body {
+  width: 100%;
+  padding-top: 6.1875rem; /* 99px */
+  background-color: var(--grey-50);
+}
+
+.footer__content {
+  display: grid;
+  grid-template-areas:
+    'sns'
+    'privacy'
+    'address'
+    'copyright'
+    'logo';
+  padding: calc(var(--space-20) * 2) 0 6.875rem; /* 위 40 · 아래 110px */
+  border-top: 1px solid var(--grey-100);
+}
+
+.footer__sns {
+  grid-area: sns;
+  padding: var(--space-10);
+}
+
+.footer__privacy {
+  grid-area: privacy;
+  justify-self: center;
+  padding: var(--space-10) var(--space-16);
+  color: var(--hover-hover-line);
+  font-size: var(--mobile-caption-font-size);
+  font-weight: var(--mobile-caption-font-weight);
+  line-height: var(--mobile-caption-line-height);
+}
+
+.footer__address {
+  grid-area: address;
+  padding-inline: var(--space-10);
+  color: var(--color-text-primary);
+  font-size: var(--desktop-footer-font-size);
+  font-style: normal;
+  font-weight: var(--desktop-footer-font-weight);
+  line-height: var(--desktop-footer-line-height);
+}
+
+/* 저작권 — Figma #666은 토큰에 없어 대비 4.5:1 이상인 --grey-700 사용 */
+.footer__copyright {
+  grid-area: copyright;
+  margin-top: calc(var(--space-20) + var(--space-10)); /* 30px */
+  color: var(--grey-700);
+  font-size: var(--mobile-footer-font-size);
+  font-weight: var(--mobile-footer-font-weight);
+  line-height: var(--mobile-footer-line-height);
+  text-align: center;
+}
+
+.footer__logo {
+  grid-area: logo;
+  width: 15.5rem; /* 248px */
+  height: auto;
+  margin-top: calc(var(--space-20) + var(--space-10)); /* 30px */
+}
+
+@media (min-width: 768px) {
+  /* 상단이동버튼 — 오른쪽 60px, 위 14px, 85px */
+  .footer__scroll-top {
+    position: absolute;
+    top: 0.875rem; /* 14px */
+    right: calc(var(--space-20) * 3);
+  }
+
+  .footer__scroll-top .scroll-top-button,
+  .footer__scroll-top .scroll-top-button img {
+    width: 5.3125rem; /* 85px */
+    height: 5.3125rem;
+  }
+
+  /* 위 99px 여백은 흰색, 그 아래부터 회색 */
+  .footer__body {
+    background-color: transparent;
+  }
+
+  .footer__content {
+    grid-template-areas:
+      'privacy   .'
+      'address   .'
+      'copyright sns'
+      'logo      sns';
+    grid-template-columns: 1fr auto;
+    row-gap: var(--space-20);
+    padding: calc(var(--space-20) * 2 + var(--space-10)) calc(var(--space-20) * 3) 6.875rem; /* 위 50 · 좌우 60 · 아래 110 */
+    background-color: var(--grey-50);
+  }
+
+  .footer__sns {
+    align-self: start;
+    padding: 0;
+  }
+
+  .footer__privacy {
+    justify-self: start;
+  }
+
+  .footer__address {
+    padding-inline: 0;
+  }
+
+  /* 주소 아래 회색 띠 경계(50 + 40px) */
+  .footer__copyright {
+    margin-top: calc(var(--space-20) * 3 + var(--space-10)); /* 70px (+ 간격 20px = 90px) */
+    font-size: var(--desktop-footer-font-size);
+    font-weight: var(--desktop-footer-font-weight);
+    line-height: var(--desktop-footer-line-height);
+    text-align: left;
+  }
+
+  .footer__logo {
+    width: 18.0625rem; /* 289px */
+    margin-top: var(--space-10);
+  }
+}

@@ -1,0 +1,33 @@
+/* VisitLegend.css — Figma 관람/선택 (270:6057) */
+
+.visit-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--space-20);
+  color: var(--color-text-primary);
+  font-size: var(--mobile-badge-font-size);
+  font-weight: var(--mobile-badge-font-weight);
+  line-height: var(--mobile-badge-line-height);
+}
+
+.visit-legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8); /* ※ Figma 9px — 토큰에 없어 --space-8 사용 */
+}
+
+/* 관람일 — 흰 동그라미 + 검정 테두리 */
+.visit-legend__dot {
+  width: 1.25rem; /* 20px */
+  height: 1.25rem;
+  border: 1px solid var(--grey-900);
+  border-radius: var(--radius-pill);
+  background-color: var(--white);
+}
+
+/* 선택일 — 검정 동그라미 */
+.visit-legend__dot--selected {
+  background-color: var(--grey-900);
+}

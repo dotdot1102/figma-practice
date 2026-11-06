@@ -1,0 +1,73 @@
+/* ReservationPage.css — Figma mobile4 (292:5922) · mobile5 (292:6487)
+   ※ 데스크탑 시안(desktop3·4)은 아직 반영 전 — 768px 이상에서는 모바일 구성을 가운데 40rem 너비로 보여 줌 */
+
+.reservation-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
+.reservation-page__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16); /* ※ Figma 15px */
+  padding-inline: var(--space-16);
+}
+
+.reservation-page__calendar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16); /* ※ Figma 15px */
+}
+
+/* 관람일 ○ 선택일 ● — 오른쪽 정렬, 49px 높이 */
+.reservation-page__legend {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 3.0625rem; /* 49px */
+  align-items: center;
+}
+
+/* 달 이동과 달력 사이 37px */
+.reservation-page__month {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(var(--space-20) * 2); /* ※ Figma 37px → 40px */
+}
+
+.reservation-page__time {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16); /* ※ Figma 15px */
+}
+
+/* 예약하기 — 오른쪽 정렬, Figma 122px */
+.reservation-page__submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reservation-page__submit .m-more-button {
+  min-width: 7.625rem; /* 122px */
+}
+
+/* 예약 확정 팝업 — 화면 가운데에 띄움 */
+.reservation-page__popup {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .reservation-page__main {
+    width: 100%;
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+}

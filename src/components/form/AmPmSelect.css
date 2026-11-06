@@ -1,0 +1,12 @@
+/* AmPmSelect.css — Figma 오전/오후 (802:10703) */
+
+.am-pm-select {
+  display: flex;
+  gap: var(--space-20);
+  width: 100%;
+}
+
+/* 버튼 두 개를 같은 너비로 */
+.am-pm-select > .button {
+  flex: 1 0 0;
+}

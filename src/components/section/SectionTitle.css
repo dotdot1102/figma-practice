@@ -1,0 +1,43 @@
+/* SectionTitle.css — 메인 화면 섹션 제목 줄
+   모바일 mobile/H1(24px) → 768px 이상 desktop/H2(28px) */
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  padding: var(--space-12);
+}
+
+.section-title__heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  color: var(--color-text-primary);
+  font-size: var(--mobile-h1-font-size);
+  font-weight: var(--mobile-h1-font-weight);
+  line-height: var(--mobile-h1-line-height);
+}
+
+.section-title__icon {
+  width: 2.25rem; /* 36px */
+  height: 2.25rem;
+}
+
+/* 제목 옆 작은 더보기 버튼 — Figma 100px */
+.section-title .m-more-button {
+  min-width: 6.25rem; /* 100px */
+}
+
+@media (min-width: 768px) {
+  .section-title__heading {
+    font-size: var(--desktop-h2-font-size);
+    font-weight: var(--desktop-h2-font-weight);
+    line-height: var(--desktop-h2-line-height);
+  }
+
+  .section-title__icon {
+    width: 2.625rem; /* 42px */
+    height: 2.625rem;
+  }
+}

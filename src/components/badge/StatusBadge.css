@@ -1,0 +1,43 @@
+/* StatusBadge.css — Figma 상태뱃지 / 뱃지-휴관일 */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-size-14);
+  font-weight: var(--text-weight-700);
+  line-height: 1.5rem; /* Figma 24px */
+  white-space: nowrap;
+}
+
+/* 전시중 — 초록 배경 + 진한 초록 글자 + 아이콘 */
+.status-badge--exhibiting {
+  padding-inline-start: var(--space-4);
+  background-color: var(--color-badge-exhibiting);
+  color: var(--green-900);
+}
+
+/* 종료 임박 — 연한 빨강 배경 + 진한 빨강 글자 + 아이콘
+   Figma 배경 rgba(248,10,10,0.2) → --red-500을 20%로 섞어 사용 */
+.status-badge--ending {
+  padding-inline-start: var(--space-4);
+  background-color: color-mix(in srgb, var(--red-500) 20%, transparent);
+  color: var(--red-900);
+}
+
+/* 종료 — 회색 배경 + 진한 회색 글자 + 아이콘
+   ※ Figma 배경 rgba(196,196,196,0.7)은 토큰에 없어 가장 가까운 --grey-100 사용 */
+.status-badge--ended {
+  padding-inline-start: var(--space-4);
+  background-color: var(--grey-100);
+  color: var(--grey-800);
+}
+
+/* 휴관일 — 빨간 배경 + 흰 글자
+   ※ Figma 색 #ff0000은 토큰에 없어 --red-500 사용 */
+.status-badge--closed {
+  background-color: var(--red-500);
+  color: var(--white);
+}

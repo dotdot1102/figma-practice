@@ -1,0 +1,118 @@
+/* MainPage.css — Figma mobile1 (289:4280) · desktop1 (292:6965)
+   모바일 기본 → 768px 이상 데스크탑 */
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  max-width: 1920px; /* Figma 데스크탑 시안 너비 — 넓은 화면에서 가운데 정렬 */
+  margin-inline: auto;
+}
+
+.main-page__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+/* 모바일·데스크탑 전용 블록 */
+.main-page__desktop {
+  display: none;
+}
+
+/* 구분선 */
+.main-page__line {
+  border: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+/* 대표 전시 (모바일) */
+.main-page__featured > .main-page__mobile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.main-page__featured-button {
+  padding-inline: var(--space-16);
+}
+
+.main-page__featured-button .m-more-button {
+  width: 100%;
+}
+
+/* Figma 대표 전시 카드 사진 213px (기본 카드는 184px) */
+.main-page__featured-card .m-exhibition-card__image {
+  height: 13.3125rem; /* 213px */
+}
+
+/* 미술관 (모바일) — 카드마다 위아래 20px */
+.main-page__museum-list > li {
+  padding-block: var(--space-20);
+}
+
+/* 전시 슬라이드 (모바일) — Figma 328px, 좌우 16px */
+.main-page__exhibition-slide {
+  padding-inline: var(--space-16);
+}
+
+/* 뉴스레터 슬라이드 (모바일) — Figma 340px, 좌우 10px */
+.main-page__news-slide {
+  padding: var(--space-10);
+}
+
+@media (min-width: 768px) {
+  .main-page,
+  .main-page__main {
+    gap: var(--space-12);
+  }
+
+  .main-page .main-page__mobile {
+    display: none;
+  }
+
+  .main-page__desktop {
+    display: block;
+  }
+
+  /* 섹션 — 좌우 60px, 제목과 카드 사이 30px */
+  .main-page__section {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space-20) + var(--space-10)); /* 30px */
+    padding: 0 calc(var(--space-20) * 3); /* 좌우 60px */
+  }
+
+  .main-page__exhibitions,
+  .main-page__news {
+    padding-block: calc(var(--space-20) * 3); /* 위아래 60px */
+  }
+
+  .main-page__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  /* 미술관 카드 — Figma 370px 4개, 양 끝 정렬 */
+  .main-page__grid--museum {
+    grid-template-columns: repeat(4, minmax(0, 23.125rem)); /* 370px */
+    justify-content: space-between;
+    gap: var(--space-20);
+  }
+
+  /* 전시 카드 — Figma 420px 4개, 사이 40px */
+  .main-page__grid--exhibition {
+    gap: calc(var(--space-20) * 2);
+  }
+
+  /* 뉴스 카드 — Figma 428px 4개, 사이 약 30px */
+  .main-page__grid--news {
+    gap: calc(var(--space-20) + var(--space-10));
+  }
+
+  .main-page__news-more {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: calc(var(--space-20) + var(--space-10));
+  }
+}

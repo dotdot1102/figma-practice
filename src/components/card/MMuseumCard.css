@@ -1,0 +1,61 @@
+/* MMuseumCard.css — Figma m/미술관카드 (260:3912) */
+
+.m-museum-card {
+  display: grid;
+  grid-template-columns: 1fr 7.9375rem; /* 사진 칸 127px */
+  gap: var(--space-10);
+  width: 100%;
+  padding: var(--space-16);
+  background-color: var(--white);
+}
+
+.m-museum-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-10);
+}
+
+.m-museum-card__name {
+  color: var(--color-text-primary);
+  font-size: var(--mobile-cta-font-size);
+  font-weight: var(--mobile-cta-font-weight);
+  line-height: var(--mobile-cta-line-height);
+}
+
+.m-museum-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  color: var(--color-text-primary);
+  font-size: var(--mobile-sub-font-size);
+  font-weight: var(--mobile-sub-font-weight);
+  line-height: var(--mobile-sub-line-height);
+}
+
+/* "3월 ~ 10월 : 10:00 ~ 19:00" 한 줄 */
+.m-museum-card__row {
+  display: flex;
+  gap: var(--space-8); /* ※ Figma 9px — 토큰에 없어 --space-8 사용 */
+}
+
+.m-museum-card__row dt::after {
+  content: ' :';
+}
+
+.m-museum-card__row--closed {
+  margin-top: var(--space-4); /* 운영시간과 휴관일 사이 10px (4 + 4 + gap) */
+}
+
+/* 사진 칸 — 사진이 없으면 회색 */
+.m-museum-card__image {
+  height: 10.0625rem; /* 161px */
+  overflow: hidden;
+  background-color: var(--color-text-sub);
+}
+
+.m-museum-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

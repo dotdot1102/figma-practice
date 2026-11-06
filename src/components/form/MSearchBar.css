@@ -1,0 +1,52 @@
+/* MSearchBar.css — Figma m/검색창 (292:4694) */
+
+.m-search-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  min-height: 3.625rem; /* 58px */
+  padding-inline: var(--space-20);
+  border: 1px solid var(--grey-500);
+  border-radius: var(--radius-pill);
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.m-search-bar img {
+  flex-shrink: 0;
+}
+
+.m-search-bar input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text-primary);
+  font-size: var(--mobile-cta-font-size);
+  font-weight: var(--mobile-cta-font-weight);
+  line-height: var(--mobile-cta-line-height);
+}
+
+.m-search-bar input::placeholder {
+  color: var(--grey-500);
+}
+
+.m-search-bar input:focus {
+  outline: none; /* 테두리 전체에 포커스 표시 (아래) */
+}
+
+.m-search-bar:focus-within {
+  outline: 2px solid var(--color-reservation-primary);
+  outline-offset: 2px;
+}
+
+/* 음성 버튼 — 터치 영역 44px */
+.m-search-bar__voice {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-inline-end: calc(var(--space-10) * -1); /* 넓어진 터치 영역만큼 오른쪽 여백 보정 */
+}

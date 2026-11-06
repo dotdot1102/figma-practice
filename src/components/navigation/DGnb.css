@@ -1,0 +1,27 @@
+/* DGnb.css — Figma d/gnb (210:4075) */
+
+.d-gnb {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  width: 12.0625rem; /* 193px */
+}
+
+/* 상위 메뉴 제목 */
+.d-gnb__title {
+  padding: var(--space-4);
+  color: var(--color-text-primary);
+  font-size: var(--desktop-h2-font-size);
+  font-weight: var(--desktop-h2-font-weight);
+  line-height: var(--desktop-h2-line-height);
+  white-space: nowrap;
+}
+
+/* 하위 메뉴 상자 */
+.d-gnb__list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-20) + var(--space-10)); /* 30px */
+  padding: var(--space-20) var(--space-10);
+  border: 1px solid var(--grey-100);
+}

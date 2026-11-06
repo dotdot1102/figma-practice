@@ -1,0 +1,87 @@
+/* MPopup.css — Figma m/팝업창 (270:7479) */
+
+.m-popup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15.75rem; /* 252px */
+  min-height: 19.375rem; /* 310px */
+  padding: calc(var(--space-20) * 3) var(--space-20) calc(var(--space-20) + var(--space-16)); /* 위 60 · 좌우 20 · 아래 36 */
+  overflow: hidden;
+  border: 1px solid var(--color-reservation-stroke);
+  border-radius: var(--radius-lx);
+  background-color: var(--white);
+  box-shadow: var(--shadow-modal);
+}
+
+/* 위쪽 파란 빛 번짐 (Figma 흐린 원 장식) */
+.m-popup::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 22% at 50% 0%, color-mix(in srgb, var(--blue-800) 55%, transparent), transparent),
+    radial-gradient(ellipse 95% 50% at 50% 0%, var(--blue-100), transparent);
+  pointer-events: none;
+}
+
+/* 장식 위로 내용 올리기 */
+.m-popup > * {
+  position: relative;
+}
+
+.m-popup__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.m-popup__icon {
+  width: 2rem; /* 32px */
+  height: auto;
+}
+
+.m-popup__title {
+  color: var(--color-text-dark);
+  font-size: var(--mobile-h2-font-size);
+  font-weight: var(--mobile-h2-font-weight);
+  line-height: var(--mobile-h2-line-height);
+  text-align: center;
+}
+
+/* 장소·일시 + 버튼 상자 */
+.m-popup__box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  width: 100%;
+  margin-top: auto;
+  padding-top: var(--space-12);
+  border: 1px solid var(--grey-500);
+  border-radius: var(--radius-lx);
+  background-color: var(--white);
+}
+
+.m-popup__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  color: var(--color-text-primary);
+  font-size: var(--mobile-popup-font-size);
+  font-weight: var(--mobile-popup-font-weight);
+  line-height: var(--mobile-popup-line-height);
+  text-align: center;
+}
+
+/* 예약확정 버튼 — 위에 구분선
+   ※ Figma 구분선 #c4c4c4는 토큰에 없어 --grey-100 사용 */
+.m-popup__confirm {
+  min-height: 2.75rem; /* 터치 영역 44px */
+  border-top: 1px solid var(--grey-100);
+  color: var(--blue-800);
+  font-size: var(--mobile-badge-font-size);
+  font-weight: var(--mobile-badge-font-weight);
+  line-height: var(--mobile-badge-line-height);
+}

@@ -1,0 +1,106 @@
+/* Header.css — Figma 상단/로고메뉴 (모바일) · 상단로고메뉴 + 메뉴바 (데스크탑)
+   모바일 기본 → 768px 이상 데스크탑 */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.header__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-12) var(--space-16) 0;
+}
+
+.header__logo img {
+  width: 7.5625rem; /* 121px */
+  height: auto;
+}
+
+.header__mobile-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* 모바일 검색 아이콘 — Figma 24px */
+.header__mobile-actions .search-icon-button img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.header__menu-button {
+  display: grid;
+  place-items: center;
+  width: 2.75rem; /* 터치 영역 44px (아이콘은 24px) */
+  height: 2.75rem;
+}
+
+.header__menu-button img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* 모바일에서는 데스크탑 전용 영역 숨김 */
+.header__desktop-actions,
+.header__nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header__top {
+    align-items: flex-start;
+    padding: var(--space-20) calc(var(--space-20) * 3); /* 위아래 20 · 좌우 60 */
+  }
+
+  .header__mobile-actions {
+    display: none;
+  }
+
+  .header__desktop-actions {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-10);
+  }
+
+  /* 로그인 아이콘 — Figma 32px, 위아래 10px */
+  .header__login {
+    display: grid;
+    place-items: center;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding-block: var(--space-10);
+  }
+
+  .header__login img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-inline: calc(var(--space-20) * 3); /* 60px */
+  }
+
+  /* d/gnb 7개 — Figma 1431px 안에 같은 너비로 */
+  .header__gnb {
+    display: flex;
+    flex: 0 1 89.4375rem; /* 1431px */
+    padding-block: var(--space-20);
+  }
+
+  .header__gnb > li {
+    flex: 1;
+  }
+
+  /* 검색 아이콘 칸 — Figma 88px, 위 20px */
+  .header__nav-search {
+    display: flex;
+    justify-content: center;
+    width: 5.5rem; /* 88px */
+    padding-top: var(--space-20);
+  }
+}

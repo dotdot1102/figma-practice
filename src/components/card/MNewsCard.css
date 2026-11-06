@@ -1,0 +1,44 @@
+/* MNewsCard.css — Figma m/뉴스카드 (276:7891) */
+
+.m-news-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+/* 사진 칸 — 사진이 없으면 분홍 */
+.m-news-card__image {
+  height: 18.75rem; /* 300px */
+  overflow: hidden;
+  background-color: var(--red-50);
+}
+
+.m-news-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.m-news-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  padding: var(--space-20) calc(var(--space-16) * 2); /* 좌우 32px (16 + 안쪽 16) */
+}
+
+.m-news-card__title {
+  color: var(--color-text-primary);
+  font-size: var(--mobile-h1-font-size);
+  font-weight: var(--mobile-h1-font-weight);
+  line-height: var(--mobile-h1-line-height);
+}
+
+.m-news-card__description {
+  color: var(--color-text-meta);
+  font-size: var(--mobile-body-font-size);
+  font-weight: var(--mobile-body-font-weight);
+  line-height: var(--mobile-body-line-height);
+}

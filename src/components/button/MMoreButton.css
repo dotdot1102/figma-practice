@@ -1,0 +1,18 @@
+/* MMoreButton.css — Figma m/더보기버튼 (290:4324) */
+
+.m-more-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10.5rem; /* 168px */
+  min-height: 2.75rem; /* 터치 영역 44px (Figma 40px) */
+  padding-inline: var(--space-12) var(--space-4);
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--radius-pill);
+  background-color: var(--white);
+  color: var(--color-text-primary);
+  font-size: var(--mobile-badge-font-size);
+  font-weight: var(--mobile-badge-font-weight);
+  line-height: var(--mobile-badge-line-height);
+  white-space: nowrap;
+}

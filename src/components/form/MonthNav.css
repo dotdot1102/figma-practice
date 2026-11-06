@@ -1,0 +1,26 @@
+/* MonthNav.css — Figma 날짜 (270:7420) */
+
+.month-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.month-nav__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4); /* ※ Figma 5px — 토큰에 없어 --space-4 사용 */
+  color: var(--color-text-primary);
+  font-size: var(--mobile-h1-font-size);
+  font-weight: var(--mobile-h1-font-weight);
+  line-height: var(--mobile-h1-line-height);
+  white-space: nowrap;
+}
+
+/* 화살표 버튼 — 터치 영역 44px (아이콘은 24px) */
+.month-nav__arrow {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+}

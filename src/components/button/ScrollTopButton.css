@@ -1,0 +1,29 @@
+/* ScrollTopButton.css — Figma 상단이동버튼 (255:5298) */
+
+.scroll-top-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.75rem; /* 터치 영역 44px (아이콘은 40px) */
+  height: 2.75rem;
+}
+
+/* 네모 배경과 화살표를 같은 자리에 겹쳐 놓기 */
+.scroll-top-button img {
+  grid-area: 1 / 1;
+}
+
+.scroll-top-button__bg--hover {
+  display: none;
+}
+
+/* 호버 — 검정 네모 → 파란 네모 */
+@media (hover: hover) {
+  .scroll-top-button:hover .scroll-top-button__bg--default {
+    display: none;
+  }
+
+  .scroll-top-button:hover .scroll-top-button__bg--hover {
+    display: block;
+  }
+}

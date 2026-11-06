@@ -1,0 +1,347 @@
+/* ExhibitionDetailPage.css — Figma mobile3 (292:5593) · desktop3 (544:11575) · desktop4 (587:12423)
+   모바일 기본 → 768px 이상 데스크탑 */
+
+.exhibition-detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
+.exhibition-detail-page__main {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-20) + var(--space-10)); /* 30px */
+  padding-bottom: calc(var(--space-20) * 5); /* 아래 푸터까지 약 123px (+ 간격 20px) */
+}
+
+/* 모바일·데스크탑 전용 블록 */
+.exhibition-detail-page__desktop {
+  display: none;
+}
+
+.exhibition-detail-page__line {
+  border: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.exhibition-detail-page__empty {
+  padding: calc(var(--space-20) * 3) var(--space-16);
+  text-align: center;
+}
+
+.exhibition-detail-page__empty a {
+  text-decoration: underline;
+}
+
+/* 현재전시카드 — 위아래 20px, 카드와 버튼 사이 11px */
+.exhibition-detail-page__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  padding-block: var(--space-20);
+}
+
+/* 예약하기 — 오른쪽 정렬, Figma 150px */
+.exhibition-detail-page__reserve {
+  display: flex;
+  justify-content: flex-end;
+  padding-inline: var(--space-12);
+}
+
+.exhibition-detail-page__reserve .m-more-button {
+  min-width: 9.375rem; /* 150px */
+}
+
+/* 유의사항 — 좌우 16px, 두 묶음 사이 50px */
+.exhibition-detail-page__notices {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-20) * 2 + var(--space-10)); /* 50px */
+  padding-inline: var(--space-16);
+  color: var(--color-text-dark);
+}
+
+.exhibition-detail-page__notice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.exhibition-detail-page__notice-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  font-size: var(--mobile-cta-font-size);
+  font-weight: var(--mobile-cta-font-weight);
+  line-height: var(--mobile-cta-line-height);
+}
+
+.exhibition-detail-page__notice-title img {
+  width: 1.3125rem; /* 21px */
+  height: 1.3125rem;
+}
+
+.exhibition-detail-page__notice-body {
+  font-size: var(--mobile-sub-font-size);
+  font-weight: var(--mobile-sub-font-weight);
+  line-height: var(--mobile-sub-line-height);
+}
+
+.exhibition-detail-page__notice-body--numbered {
+  padding-inline-start: 1.3125rem; /* 21px */
+  list-style: decimal;
+}
+
+/* 장소 — 모바일은 제목 없이 지도 → 지도본문 (사이 30px) */
+.exhibition-detail-page__place-title {
+  display: none;
+}
+
+.exhibition-detail-page__place-body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-20) + var(--space-10)); /* 30px */
+}
+
+/* 지도 — 좌우 16px, 이름표와 지도 사이 20px, 지도 326px */
+.exhibition-detail-page__map {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  padding-inline: var(--space-16);
+}
+
+.exhibition-detail-page__map .m-map {
+  height: 20.375rem; /* 326px */
+}
+
+/* 지도본문 — 좌우 16px, 항목 사이 23px */
+.exhibition-detail-page__directions {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-20) + var(--space-4)); /* ※ Figma 23px → 24px */
+  padding-inline: var(--space-16);
+  color: var(--color-text-primary);
+}
+
+.exhibition-detail-page__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+/* 전화 — 제목과 번호가 한 줄 */
+.exhibition-detail-page__row--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+/* 항목 제목 — 9px 네모 + 16px 굵게 */
+.exhibition-detail-page__row dt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--mobile-cta-font-size);
+  font-weight: var(--mobile-cta-font-weight);
+  line-height: var(--mobile-cta-line-height);
+}
+
+.exhibition-detail-page__row dt::before {
+  content: '';
+  width: 0.5625rem; /* 9px */
+  height: 0.5625rem;
+  background: url('../assets/icons/ui/icon-square.png') center / contain no-repeat;
+}
+
+.exhibition-detail-page__row dd {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  font-size: var(--mobile-sub-font-size);
+  font-weight: var(--mobile-sub-font-weight);
+  line-height: var(--mobile-sub-line-height);
+}
+
+/* 지하철 — 노선 동그라미(Figma 26px · 신분당선 색) + 역 이름 */
+.exhibition-detail-page__subway {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.exhibition-detail-page__subway .subway-line {
+  flex-shrink: 0;
+  width: 1.625rem; /* 26px */
+  height: 1.625rem;
+  background-color: var(--red-900); /* ※ Figma #b7202e는 토큰에 없어 --red-900 사용 */
+  font-size: var(--mobile-button-font-size); /* 8px */
+  font-weight: var(--mobile-button-font-weight);
+}
+
+.exhibition-detail-page__bus {
+  gap: var(--space-16); /* Figma: 빈 줄 한 칸 */
+}
+
+/* 예약 확정 팝업 (데스크탑) — 화면 가운데, 화면보다 크면 스크롤 */
+.exhibition-detail-page__popup {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: var(--space-20);
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  /* 메뉴바 · 구분선 · 섹션 사이 30px */
+  .exhibition-detail-page {
+    gap: calc(var(--space-20) + var(--space-10));
+  }
+
+  .exhibition-detail-page__main {
+    padding-bottom: 0;
+  }
+
+  .exhibition-detail-page .exhibition-detail-page__mobile {
+    display: none;
+  }
+
+  .exhibition-detail-page__desktop {
+    display: block;
+  }
+
+  /* 상단/예약 — 좌우 60 · 위아래 30, 카드와 달력 사이 20px */
+  .exhibition-detail-page__top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-20);
+    padding: calc(var(--space-20) + var(--space-10)) calc(var(--space-20) * 3);
+  }
+
+  .exhibition-detail-page__top-card {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* 달력섹션 — Figma 537px, 항목 사이 30px */
+  .exhibition-detail-page__booking {
+    display: flex;
+    flex: 0 0 33.5rem; /* 536px */
+    flex-direction: column;
+    gap: calc(var(--space-20) + var(--space-10));
+    min-width: 0;
+  }
+
+  .exhibition-detail-page__legend {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--space-10);
+  }
+
+  .exhibition-detail-page__month {
+    padding: var(--space-10);
+  }
+
+  .exhibition-detail-page__month .month-nav__label {
+    font-size: var(--desktop-h2-font-size);
+    font-weight: var(--desktop-h2-font-weight);
+    line-height: var(--desktop-h2-line-height);
+  }
+
+  /* 달력 — Figma 460px 높이 (요일 41px + 날짜 줄 약 84px) */
+  .exhibition-detail-page__booking .calendar__cell {
+    height: 5.25rem; /* 84px */
+  }
+
+  /* 시간대 48px + 예약하기 96px, 사이 15px */
+  .exhibition-detail-page__time {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16); /* ※ Figma 15px */
+  }
+
+  .exhibition-detail-page__time .button {
+    min-height: 3rem; /* 48px */
+  }
+
+  .exhibition-detail-page__time .more-button {
+    width: 100%;
+    min-height: 6rem; /* 96px */
+  }
+
+  /* 유의사항 — 좌우 60 · 위아래 30, 두 묶음 사이 40px, 제목 28px · 본문 20px */
+  .exhibition-detail-page__notices {
+    gap: calc(var(--space-20) * 2);
+    padding: calc(var(--space-20) + var(--space-10)) calc(var(--space-20) * 3);
+  }
+
+  .exhibition-detail-page__notice-title {
+    font-size: var(--desktop-h3-font-size);
+    font-weight: var(--desktop-h3-font-weight);
+    line-height: var(--desktop-h3-line-height);
+  }
+
+  .exhibition-detail-page__notice-title img {
+    width: 2.125rem; /* 34px */
+    height: 2.125rem;
+  }
+
+  .exhibition-detail-page__notice-body {
+    font-size: var(--desktop-body-font-size);
+    font-weight: var(--desktop-body-font-weight);
+    line-height: var(--desktop-body-line-height);
+  }
+
+  .exhibition-detail-page__notice-body--numbered {
+    padding-inline-start: calc(var(--space-20) + var(--space-10)); /* 30px */
+  }
+
+  /* 장소 — 좌우 60 · 위아래 30, 제목과 내용 사이 30px */
+  .exhibition-detail-page__place {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space-20) + var(--space-10));
+    padding: calc(var(--space-20) + var(--space-10)) calc(var(--space-20) * 3);
+  }
+
+  .exhibition-detail-page__place-title {
+    display: block;
+  }
+
+  /* 지도 540px + 지도본문, 사이 30px */
+  .exhibition-detail-page__place-body {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .exhibition-detail-page__map {
+    flex: 0 0 33.75rem; /* 540px */
+    padding-inline: 0;
+  }
+
+  .exhibition-detail-page__map .m-map {
+    height: 26.3125rem; /* 421px */
+  }
+
+  .exhibition-detail-page__directions {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* 지도본문 글자 — 제목 17px · 본문 14px */
+  .exhibition-detail-page__row dt {
+    font-size: var(--desktop-cta-font-size);
+    font-weight: var(--desktop-cta-font-weight);
+    line-height: var(--desktop-cta-line-height);
+  }
+
+  .exhibition-detail-page__row dd {
+    font-size: var(--desktop-caption-font-size);
+    font-weight: var(--desktop-caption-font-weight);
+    line-height: var(--desktop-caption-line-height);
+  }
+}

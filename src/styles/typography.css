@@ -1,0 +1,145 @@
+/* ==========================================================
+   typography.css — 텍스트 스타일 클래스
+   모바일 기본(mobile/*) → 768px 이상 데스크탑(desktop/*)
+   ========================================================== */
+
+.text-h1 {
+  font-size: var(--mobile-h1-font-size);
+  font-weight: var(--mobile-h1-font-weight);
+  line-height: var(--mobile-h1-line-height);
+}
+
+.text-h2 {
+  font-size: var(--mobile-h2-font-size);
+  font-weight: var(--mobile-h2-font-weight);
+  line-height: var(--mobile-h2-line-height);
+}
+
+.text-h3 {
+  font-size: var(--mobile-h3-font-size);
+  font-weight: var(--mobile-h3-font-weight);
+  line-height: var(--mobile-h3-line-height);
+}
+
+.text-gnb {
+  font-size: var(--mobile-gnb-font-size);
+  font-weight: var(--mobile-gnb-font-weight);
+  line-height: var(--mobile-gnb-line-height);
+}
+
+.text-search {
+  font-size: var(--mobile-search-font-size);
+  font-weight: var(--mobile-search-font-weight);
+  line-height: var(--mobile-search-line-height);
+}
+
+.text-body {
+  font-size: var(--mobile-body-font-size);
+  font-weight: var(--mobile-body-font-weight);
+  line-height: var(--mobile-body-line-height);
+}
+
+.text-badge {
+  font-size: var(--mobile-badge-font-size);
+  font-weight: var(--mobile-badge-font-weight);
+  line-height: var(--mobile-badge-line-height);
+}
+
+.text-cta {
+  font-size: var(--mobile-cta-font-size);
+  font-weight: var(--mobile-cta-font-weight);
+  line-height: var(--mobile-cta-line-height);
+}
+
+.text-caption {
+  font-size: var(--mobile-caption-font-size);
+  font-weight: var(--mobile-caption-font-weight);
+  line-height: var(--mobile-caption-line-height);
+}
+
+.text-footer {
+  font-size: var(--mobile-footer-font-size);
+  font-weight: var(--mobile-footer-font-weight);
+  line-height: var(--mobile-footer-line-height);
+}
+
+/* 모바일 전용 스타일 (데스크탑 스타일 없음) */
+.text-sub {
+  font-size: var(--mobile-sub-font-size);
+  font-weight: var(--mobile-sub-font-weight);
+  line-height: var(--mobile-sub-line-height);
+}
+
+.text-popup {
+  font-size: var(--mobile-popup-font-size);
+  font-weight: var(--mobile-popup-font-weight);
+  line-height: var(--mobile-popup-line-height);
+}
+
+.text-button {
+  font-size: var(--mobile-button-font-size);
+  font-weight: var(--mobile-button-font-weight);
+  line-height: var(--mobile-button-line-height);
+}
+
+@media (min-width: 768px) {
+  .text-h1 {
+    font-size: var(--desktop-h1-font-size);
+    font-weight: var(--desktop-h1-font-weight);
+    line-height: var(--desktop-h1-line-height);
+  }
+
+  .text-h2 {
+    font-size: var(--desktop-h2-font-size);
+    font-weight: var(--desktop-h2-font-weight);
+    line-height: var(--desktop-h2-line-height);
+  }
+
+  .text-h3 {
+    font-size: var(--desktop-h3-font-size);
+    font-weight: var(--desktop-h3-font-weight);
+    line-height: var(--desktop-h3-line-height);
+  }
+
+  .text-gnb {
+    font-size: var(--desktop-gnb-font-size);
+    font-weight: var(--desktop-gnb-font-weight);
+    line-height: var(--desktop-gnb-line-height);
+  }
+
+  .text-search {
+    font-size: var(--desktop-search-font-size);
+    font-weight: var(--desktop-search-font-weight);
+    line-height: var(--desktop-search-line-height);
+  }
+
+  .text-body {
+    font-size: var(--desktop-body-font-size);
+    font-weight: var(--desktop-body-font-weight);
+    line-height: var(--desktop-body-line-height);
+  }
+
+  .text-badge {
+    font-size: var(--desktop-badge-font-size);
+    font-weight: var(--desktop-badge-font-weight);
+    line-height: var(--desktop-badge-line-height);
+  }
+
+  .text-cta {
+    font-size: var(--desktop-cta-font-size);
+    font-weight: var(--desktop-cta-font-weight);
+    line-height: var(--desktop-cta-line-height);
+  }
+
+  .text-caption {
+    font-size: var(--desktop-caption-font-size);
+    font-weight: var(--desktop-caption-font-weight);
+    line-height: var(--desktop-caption-line-height);
+  }
+
+  .text-footer {
+    font-size: var(--desktop-footer-font-size);
+    font-weight: var(--desktop-footer-font-weight);
+    line-height: var(--desktop-footer-line-height);
+  }
+}

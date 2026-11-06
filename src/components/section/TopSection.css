@@ -1,0 +1,42 @@
+/* TopSection.css — Figma 상단섹션 (450:9041) */
+
+.top-section {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-20) + var(--space-10)); /* 30px */
+  width: 100%;
+  padding: calc(var(--space-20) + var(--space-10)) calc(var(--space-20) * 3); /* 위아래 30 · 좌우 60 */
+}
+
+/* 포스터 — Figma 1800 × 678 비율 */
+.top-section__image {
+  width: 100%;
+  aspect-ratio: 1800 / 678;
+  object-fit: cover;
+}
+
+.top-section__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-20);
+}
+
+.top-section__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  color: var(--color-text-primary);
+}
+
+.top-section__title {
+  font-size: var(--desktop-h1-font-size);
+  font-weight: var(--desktop-h1-font-weight);
+  line-height: var(--desktop-h1-line-height);
+}
+
+.top-section__period {
+  font-size: var(--desktop-gnb-font-size);
+  font-weight: var(--desktop-gnb-font-weight);
+  line-height: var(--desktop-gnb-line-height);
+}

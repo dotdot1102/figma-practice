@@ -1,0 +1,23 @@
+/* MExhibitionGnb.css — Figma m/전시gnb (270:5709) */
+
+.m-exhibition-gnb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.75rem; /* 60px */
+  min-height: 2.8125rem; /* 45px */
+  padding: var(--space-4) var(--space-12);
+  border-bottom: 1px solid transparent;
+  color: var(--hover-hover);
+  font-size: var(--mobile-badge-font-size);
+  font-weight: var(--mobile-badge-font-weight);
+  line-height: var(--mobile-badge-line-height);
+  text-align: center;
+  white-space: pre-line; /* label 안의 \n 을 줄바꿈으로 */
+}
+
+/* 선택 — 검정 글자 + 검정 밑줄 */
+.m-exhibition-gnb--selected {
+  border-bottom-color: var(--hover-primary);
+  color: var(--color-text-primary);
+}

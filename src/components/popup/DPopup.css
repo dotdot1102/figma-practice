@@ -1,0 +1,40 @@
+/* DPopup.css — Figma d/팝업창 (279:4538)
+   MPopup.css 위에 데스크탑 크기만 덮어씀 (Figma 값은 모바일의 약 3배)
+   ※ Figma 글자 크기 45 / 30 / 48px는 토큰에 없어 가장 가까운 40 / 28 / 40px 토큰 사용 */
+
+.m-popup.d-popup {
+  width: 47.625rem; /* 762px */
+  min-height: 58.5rem; /* 936px */
+  padding: calc(var(--space-20) * 10) calc(var(--space-20) * 6 + var(--space-12)) calc(var(--space-20) * 5 + var(--space-10)); /* 위 200 · 좌우 132 · 아래 110 */
+  border-width: 3px;
+  border-radius: calc(var(--radius-lx) * 3); /* 36px */
+}
+
+.d-popup .m-popup__head {
+  gap: calc(var(--space-20) * 2 + var(--space-4)); /* 44px */
+}
+
+.d-popup .m-popup__icon {
+  width: 6rem; /* 96px */
+}
+
+.d-popup .m-popup__title {
+  font-size: var(--text-size-40);
+}
+
+.d-popup .m-popup__box {
+  gap: calc(var(--space-20) + var(--space-16)); /* 36px */
+  padding-top: calc(var(--space-20) + var(--space-16));
+  border-radius: calc(var(--radius-lx) * 3);
+}
+
+.d-popup .m-popup__info {
+  gap: var(--space-16);
+  font-size: var(--text-size-28);
+}
+
+.d-popup .m-popup__confirm {
+  min-height: calc(var(--space-20) * 5); /* 100px */
+  border-top-width: 2px;
+  font-size: var(--text-size-40);
+}

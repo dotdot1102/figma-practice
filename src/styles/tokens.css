@@ -1,0 +1,210 @@
+/* ==========================================================
+   tokens.css — Figma 디자인 토큰
+   출처: Figma "수원시립미술관 개선" (JC6lArQ52rQq8jam3MBChZ)
+         Local Variables (Primitives / Colors / Setting) + Local Text Styles
+   규칙: 이름은 Figma 변수·스타일 이름을 kebab-case로 변환 (예: Color/text/primary → --color-text-primary)
+   단위: 크기·라운드는 rem (1rem = 16px, Figma px ÷ 16), 그림자는 px
+   ※ 이 파일은 Figma 값을 그대로 옮긴 것이므로 직접 값을 바꾸지 마세요.
+   ========================================================== */
+
+:root {
+  /* ------------------------------------------------------
+     1. 컬러 — Primitives 컬렉션
+     ------------------------------------------------------ */
+  --white-900: #ffffff;
+  --grey-900: #000000;
+  --grey-800: #343434;
+  --grey-700: #595959;
+  --grey-600: #6f6f6f;
+  --grey-500: #949494;
+  --grey-100: #dedede;
+  --grey-50: #f4f4f4;
+  --red-900: #870707;
+  --red-500: #f80909;
+  --red-50: #fdcece;
+  --blue-900: #004085;
+  --blue-800: #1455a2;
+  --blue-100: #cad4ec;
+  --blue-50: #e2e8f0;
+  --green-900: #0d421f;
+  --green-100: #91dd86;
+
+  /* ------------------------------------------------------
+     2. 컬러 — Colors 컬렉션 (Primitives 참조)
+     ------------------------------------------------------ */
+  --white: var(--white-900);
+  --hover-primary: var(--grey-900);
+  --hover-hover: var(--grey-500);
+  --hover-hover-line: var(--blue-900);
+  --color-text-primary: var(--grey-900);
+  --color-text-secondary: var(--grey-800);
+  --color-text-meta: var(--grey-500);
+  --color-text-on: var(--white-900);
+  --color-reservation-page: var(--blue-100);
+  --color-reservation-primary: var(--blue-800);
+  --color-reservation-stroke: var(--blue-50); /* Figma 이름: Color/reservation/strock (오타 수정) */
+
+  /* ------------------------------------------------------
+     2-1. 컬러 — 코드 전용 추가 토큰
+     Figma 변수에는 없지만 시안에서 반복 사용된 색 (Figma 원본값 그대로)
+     ------------------------------------------------------ */
+  --color-line: #e2e3e5; /* 구분선·보더 (70회) */
+  --color-bg-subtle: #f6f6f6; /* 연한 배경 (20회) */
+  --color-text-sub: #777777; /* 보조 텍스트 (12회) */
+  --color-text-dark: #1a1a1a; /* 외부 UI 키트 스타일 "Black" (22회) */
+  --color-badge-exhibiting: rgb(117 213 104 / 80%); /* #75D568, 불투명도 80% — 상태 배지 (7회) */
+
+  /* ------------------------------------------------------
+     3. 폰트 — 패밀리
+     (Figma 변수 없음. 모든 텍스트 스타일이 Pretendard GOV 사용)
+     웹폰트는 src/styles/fonts.css에서 로컬 파일(src/fonts)로 등록
+     ------------------------------------------------------ */
+  --font-family-pretendard-gov: 'Pretendard GOV', sans-serif;
+
+  /* ------------------------------------------------------
+     4. 폰트 — 크기 (Primitives: text/size/*)
+     ------------------------------------------------------ */
+  --text-size-40: 2.5rem; /* 40px */
+  --text-size-28: 1.75rem; /* 28px */
+  --text-size-24: 1.5rem; /* 24px */
+  --text-size-20: 1.25rem; /* 20px */
+  --text-size-17: 1.0625rem; /* 17px */
+  --text-size-16: 1rem; /* 16px */
+  --text-size-15: 0.9375rem; /* 15px */
+  --text-size-14: 0.875rem; /* 14px */
+  --text-size-13: 0.8125rem; /* 13px */
+  --text-size-8: 0.5rem; /* 8px */
+
+  /* ------------------------------------------------------
+     5. 폰트 — 굵기 (Primitives: text/weight/*)
+     ------------------------------------------------------ */
+  --text-weight-700: 700;
+  --text-weight-500: 500;
+  --text-weight-400: 400;
+
+  /* ------------------------------------------------------
+     6. 텍스트 스타일 — mobile/*
+     행간: Figma 모든 스타일이 Auto → CSS normal
+     ------------------------------------------------------ */
+  --mobile-h1-font-size: var(--text-size-24);
+  --mobile-h1-font-weight: var(--text-weight-700);
+  --mobile-h1-line-height: normal;
+
+  --mobile-h2-font-size: var(--text-size-20);
+  --mobile-h2-font-weight: var(--text-weight-700);
+  --mobile-h2-line-height: normal;
+
+  --mobile-gnb-font-size: var(--text-size-24);
+  --mobile-gnb-font-weight: var(--text-weight-700);
+  --mobile-gnb-line-height: normal;
+
+  --mobile-h3-font-size: var(--text-size-20);
+  --mobile-h3-font-weight: var(--text-weight-700);
+  --mobile-h3-line-height: normal;
+
+  --mobile-search-font-size: var(--text-size-16);
+  --mobile-search-font-weight: var(--text-weight-500);
+  --mobile-search-line-height: normal;
+
+  --mobile-body-font-size: var(--text-size-16);
+  --mobile-body-font-weight: var(--text-weight-400);
+  --mobile-body-line-height: normal;
+
+  --mobile-badge-font-size: var(--text-size-15);
+  --mobile-badge-font-weight: var(--text-weight-700);
+  --mobile-badge-line-height: normal;
+
+  --mobile-cta-font-size: var(--text-size-16);
+  --mobile-cta-font-weight: var(--text-weight-700);
+  --mobile-cta-line-height: normal;
+
+  --mobile-caption-font-size: var(--text-size-16);
+  --mobile-caption-font-weight: var(--text-weight-700);
+  --mobile-caption-line-height: normal;
+
+  --mobile-footer-font-size: var(--text-size-13);
+  --mobile-footer-font-weight: var(--text-weight-400);
+  --mobile-footer-line-height: normal;
+
+  --mobile-sub-font-size: 0.875rem; /* 14px — Figma에서 변수 미연결 */
+  --mobile-sub-font-weight: 400; /* Regular — Figma에서 변수 미연결 */
+  --mobile-sub-line-height: normal;
+
+  --mobile-popup-font-size: 0.625rem; /* 10px — Figma에서 변수 미연결 */
+  --mobile-popup-font-weight: 400; /* Regular — Figma에서 변수 미연결 */
+  --mobile-popup-line-height: normal;
+
+  --mobile-button-font-size: var(--text-size-8);
+  --mobile-button-font-weight: var(--text-weight-700);
+  --mobile-button-line-height: normal;
+
+  /* ------------------------------------------------------
+     7. 텍스트 스타일 — desktop/*
+     ------------------------------------------------------ */
+  --desktop-h1-font-size: var(--text-size-40);
+  --desktop-h1-font-weight: var(--text-weight-700);
+  --desktop-h1-line-height: normal;
+
+  --desktop-h2-font-size: var(--text-size-28);
+  --desktop-h2-font-weight: var(--text-weight-700);
+  --desktop-h2-line-height: normal;
+
+  --desktop-gnb-font-size: var(--text-size-28);
+  --desktop-gnb-font-weight: var(--text-weight-500);
+  --desktop-gnb-line-height: normal;
+
+  --desktop-h3-font-size: var(--text-size-28);
+  --desktop-h3-font-weight: var(--text-weight-700);
+  --desktop-h3-line-height: normal;
+
+  --desktop-search-font-size: var(--text-size-17);
+  --desktop-search-font-weight: var(--text-weight-500);
+  --desktop-search-line-height: normal;
+
+  --desktop-body-font-size: 1.25rem; /* 20px — Figma에서 크기 변수 미연결 */
+  --desktop-body-font-weight: var(--text-weight-400);
+  --desktop-body-line-height: normal;
+
+  --desktop-badge-font-size: var(--text-size-15);
+  --desktop-badge-font-weight: var(--text-weight-700);
+  --desktop-badge-line-height: normal;
+
+  --desktop-cta-font-size: var(--text-size-17);
+  --desktop-cta-font-weight: var(--text-weight-700);
+  --desktop-cta-line-height: normal;
+
+  --desktop-caption-font-size: var(--text-size-14);
+  --desktop-caption-font-weight: var(--text-weight-400);
+  --desktop-caption-line-height: normal;
+
+  --desktop-footer-font-size: var(--text-size-15);
+  --desktop-footer-font-weight: var(--text-weight-400);
+  --desktop-footer-line-height: normal;
+
+  /* ------------------------------------------------------
+     8. 간격 — 코드 전용 추가 토큰
+     Figma에 간격 변수가 없어, 시안에서 많이 쓰인 padding/gap 값으로 정의
+     ------------------------------------------------------ */
+  --space-4: 0.25rem; /* 4px */
+  --space-8: 0.5rem; /* 8px */
+  --space-10: 0.625rem; /* 10px */
+  --space-12: 0.75rem; /* 12px */
+  --space-16: 1rem; /* 16px */
+  --space-20: 1.25rem; /* 20px */
+
+  /* ------------------------------------------------------
+     9. 라운드 (Setting: radius/*)
+     ------------------------------------------------------ */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-lx: 0.75rem; /* 12px */
+  --radius-pill: 9999px; /* 코드 전용 — 알약형 버튼 (Figma 20/29/30/45px 통일) */
+
+  /* ------------------------------------------------------
+     10. 그림자 (Setting: shadow/*)
+     shadow/color = blue/900, 불투명도 30%
+     ------------------------------------------------------ */
+  --shadow-color: rgb(0 64 133 / 30%);
+  --shadow-modal-y: 16px;
+  --shadow-modal-blur: 32px;
+  --shadow-modal: 0 var(--shadow-modal-y) var(--shadow-modal-blur) 0 var(--shadow-color);
+}

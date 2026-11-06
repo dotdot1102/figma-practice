@@ -1,0 +1,12 @@
+/* ReservationDate.css — Figma 예약/선택확인 (270:7476) */
+
+.reservation-date {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4); /* ※ Figma 5px — 토큰에 없어 --space-4 사용 */
+  color: var(--color-text-primary);
+  font-size: var(--mobile-badge-font-size);
+  font-weight: var(--mobile-badge-font-weight);
+  line-height: var(--mobile-badge-line-height);
+  white-space: nowrap;
+}

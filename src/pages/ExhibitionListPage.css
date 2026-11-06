@@ -1,0 +1,122 @@
+/* ExhibitionListPage.css — Figma mobile2 (292:4467) · desktop2 (375:9048)
+   모바일 기본 → 768px 이상 데스크탑 */
+
+.exhibition-list-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  max-width: 1920px; /* Figma 데스크탑 시안 너비 — 넓은 화면에서 가운데 정렬 */
+  margin-inline: auto;
+}
+
+.exhibition-list-page__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+/* 모바일·데스크탑 전용 블록 */
+.exhibition-list-page__desktop {
+  display: none;
+}
+
+.exhibition-list-page__line {
+  border: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+/* 제목 + 검색 (모바일) */
+.exhibition-list-page__search {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.exhibition-list-page__mobile-title {
+  padding-inline: var(--space-16);
+}
+
+.exhibition-list-page__search-mobile {
+  padding-block: var(--space-16);
+}
+
+/* 전시 카드 (모바일) — Figma 328px, 좌우 16px / 아래 푸터까지 90px */
+.exhibition-list-page__cards {
+  padding-bottom: calc(var(--space-20) * 3 + var(--space-10)); /* 70px (+ 간격 20px) */
+}
+
+.exhibition-list-page__slide {
+  padding-inline: var(--space-16);
+}
+
+/* 결과 0건 */
+.exhibition-list-page__empty {
+  padding: calc(var(--space-20) * 3) var(--space-16);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .exhibition-list-page,
+  .exhibition-list-page__main {
+    gap: calc(var(--space-20) + var(--space-10)); /* 30px */
+  }
+
+  .exhibition-list-page .exhibition-list-page__mobile {
+    display: none;
+  }
+
+  .exhibition-list-page__desktop {
+    display: block;
+  }
+
+  /* 제목 + 검색 — 좌우 60px, 사이 30px */
+  .exhibition-list-page__search {
+    gap: calc(var(--space-20) + var(--space-10));
+    padding-inline: calc(var(--space-20) * 3);
+  }
+
+  /* 검색창 993px + 간격 + 정렬버튼 353px (Figma 간격 117px → 120px) */
+  .exhibition-list-page__search-desktop {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(var(--space-20) * 6);
+    padding: var(--space-12);
+  }
+
+  .exhibition-list-page__search-field {
+    flex: 0 1 62.0625rem; /* 993px */
+  }
+
+  .exhibition-list-page__sort {
+    flex: 0 1 22.0625rem; /* 353px */
+  }
+
+  /* 전시관 탭 — 좌우 60px · 위아래 12px, 안쪽 13px */
+  .exhibition-list-page__tabs-desktop {
+    padding: var(--space-12) calc(var(--space-20) * 3);
+  }
+
+  .exhibition-list-page__tabs-desktop .m-current-exhibition-list {
+    padding-inline: var(--space-12);
+  }
+
+  /* Figma: m/전시gnb를 약 2배로 키워 사용 (글자 30.75px → 토큰 28px) */
+  .exhibition-list-page__tabs-desktop .m-exhibition-gnb {
+    min-height: 3.75rem; /* 60px */
+    border-bottom-width: 2px;
+    font-size: var(--text-size-28);
+    white-space: nowrap;
+  }
+
+  /* 전시 카드 — 위아래·좌우 60px, 420px 4개 사이 40px */
+  .exhibition-list-page__cards {
+    padding: calc(var(--space-20) * 3);
+  }
+
+  .exhibition-list-page__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: calc(var(--space-20) * 2);
+  }
+}

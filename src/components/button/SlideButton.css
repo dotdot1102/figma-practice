@@ -1,0 +1,43 @@
+/* SlideButton.css — Figma 버튼 (다음/기본 210:4257 · 다음/클릭 544:5450) */
+
+.slide-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background-color: var(--grey-900);
+}
+
+/* 터치 영역을 44px 이상으로 넓힘 (보이는 크기는 그대로) */
+.slide-button::before {
+  content: '';
+  position: absolute;
+  inset: calc(var(--space-4) * -1);
+}
+
+.slide-button--md {
+  width: 2.5rem; /* 40px */
+  height: 2.5rem;
+}
+
+.slide-button--lg {
+  width: 2.625rem; /* 42px */
+  height: 2.625rem;
+}
+
+.slide-button img {
+  width: 1.5rem; /* 24px */
+  height: 1.5rem;
+}
+
+/* 다음 버튼 — 왼쪽 화살표를 뒤집어 사용 (Figma와 동일) */
+.slide-button--next img {
+  transform: scaleX(-1);
+}
+
+/* 다음/클릭 — 더 넘길 슬라이드가 없음: 검정 60% */
+.slide-button:disabled {
+  background-color: color-mix(in srgb, var(--grey-900) 60%, transparent);
+  cursor: default;
+}

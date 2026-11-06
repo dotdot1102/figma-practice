@@ -1,0 +1,8 @@
+/* SearchIconButton.css — Figma 버튼/검색아이콘 (239:4696) */
+
+.search-icon-button {
+  display: grid;
+  place-items: center;
+  width: 2.75rem; /* 터치 영역 44px (아이콘은 40px) */
+  height: 2.75rem;
+}

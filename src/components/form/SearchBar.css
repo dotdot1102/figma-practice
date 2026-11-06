@@ -1,0 +1,59 @@
+/* SearchBar.css — Figma 검색창 (220:4369) */
+
+.search-bar {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-20); /* ※ Figma 69px — 토큰에 없어 --space-20 사용 */
+  width: 100%;
+  font-size: var(--desktop-cta-font-size);
+  font-weight: var(--desktop-cta-font-weight);
+  line-height: var(--desktop-cta-line-height);
+}
+
+/* 입력 영역 */
+.search-bar__field {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--space-8);
+  min-width: 0;
+  padding: var(--space-12) var(--space-20);
+  border: 1px solid var(--grey-500);
+  border-radius: var(--radius-pill);
+  background-color: var(--white);
+}
+
+.search-bar__field:focus-within {
+  outline: 2px solid var(--color-reservation-primary);
+  outline-offset: 2px;
+}
+
+.search-bar__field img {
+  flex-shrink: 0;
+}
+
+.search-bar__field input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text-primary);
+}
+
+.search-bar__field input:focus {
+  outline: none;
+}
+
+.search-bar__field input::placeholder {
+  color: var(--grey-500);
+}
+
+/* 검색 버튼 */
+.search-bar__button {
+  flex-shrink: 0;
+  width: 12.25rem; /* 196px */
+  padding-block: var(--space-20);
+  border-radius: var(--radius-pill);
+  background-color: var(--grey-800);
+  color: var(--white);
+}

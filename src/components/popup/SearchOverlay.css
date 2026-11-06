@@ -1,0 +1,72 @@
+/* SearchOverlay.css — Figma 검색오버레이 (844:12623) */
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  padding-inline: var(--space-16);
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+/* 배경 사진 — 화면을 꽉 채우고 살짝 흐리게 */
+.search-overlay__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  filter: blur(0.25rem); /* Figma 4px */
+}
+
+/* 로고 — 왼쪽 위 */
+.search-overlay__logo {
+  position: absolute;
+  top: var(--space-20);
+  left: var(--space-16);
+  width: 40%;
+  max-width: 18.75rem; /* 300px */
+  height: auto;
+}
+
+/* 닫기 버튼 — 오른쪽 위 */
+.search-overlay__close {
+  position: absolute;
+  top: var(--space-20);
+  right: var(--space-16);
+  display: grid;
+  place-items: center;
+  width: 3.125rem; /* 50px */
+  height: 3.125rem;
+}
+
+.search-overlay__close img {
+  width: 100%;
+  height: auto;
+}
+
+/* 검색창 — 가운데 */
+.search-overlay__search {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+}
+
+@media (min-width: 768px) {
+  .search-overlay {
+    padding-inline: var(--space-20);
+  }
+
+  .search-overlay__logo {
+    left: calc(var(--space-20) * 4); /* 80px */
+  }
+
+  .search-overlay__close {
+    top: calc(var(--space-20) * 4);
+    right: calc(var(--space-20) * 4);
+  }
+}

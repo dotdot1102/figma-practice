@@ -1,0 +1,27 @@
+/* MenuBar.css — Figma 메뉴바 (201:15083) */
+
+.menu-bar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  border-bottom: 4px solid transparent; /* 호버 때 밑줄 자리 미리 확보 (글자 흔들림 방지) */
+  color: var(--color-text-primary);
+  font-size: var(--desktop-gnb-font-size);
+  font-weight: var(--desktop-gnb-font-weight);
+  line-height: var(--desktop-gnb-line-height);
+  white-space: nowrap;
+}
+
+/* 비활성화 — 회색 글자 */
+.menu-bar:disabled {
+  color: var(--grey-500);
+  cursor: default;
+}
+
+/* 호버 — 파란 밑줄 4px */
+@media (hover: hover) {
+  .menu-bar:not(:disabled):hover {
+    border-bottom-color: var(--hover-hover-line);
+  }
+}
