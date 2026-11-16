@@ -15,7 +15,7 @@
 }
 
 .header__logo img {
-  width: 7.5625rem; /* 121px */
+  width: 8.5rem; /* 136px — ※ Figma 121px에서 키움 */
   height: auto;
 }
 
@@ -54,6 +54,10 @@
     padding: var(--space-20) calc(var(--space-20) * 3); /* 위아래 20 · 좌우 60 */
   }
 
+  .header__logo img {
+    width: 10rem; /* 160px — ※ Figma 121px에서 키움 */
+  }
+
   .header__mobile-actions {
     display: none;
   }
@@ -85,15 +89,12 @@
     padding-inline: calc(var(--space-20) * 3); /* 60px */
   }
 
-  /* d/gnb 7개 — Figma 1431px 안에 같은 너비로 */
+  /* d/gnb 7개 — Figma 1431px 안에, 메뉴 이름 사이 간격이 모두 같게 */
   .header__gnb {
     display: flex;
+    justify-content: space-evenly;
     flex: 0 1 89.4375rem; /* 1431px */
     padding-block: var(--space-20);
-  }
-
-  .header__gnb > li {
-    flex: 1;
   }
 
   /* 검색 아이콘 칸 — Figma 88px, 위 20px */

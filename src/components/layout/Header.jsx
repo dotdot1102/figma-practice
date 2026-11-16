@@ -1,6 +1,7 @@
 import SearchIconButton from '../button/SearchIconButton'
 import LanguageButton from '../button/LanguageButton'
 import DGnb from '../navigation/DGnb'
+import { MENUS } from '../../data/menus'
 import logo from '../../assets/images/logo/logo.png'
 import iconMenu from '../../assets/icons/ui/icon-menu.png'
 import iconLogin from '../../assets/icons/ui/icon-login.png'
@@ -22,17 +23,7 @@ import './Header.css'
  * @param {Function} onSearchClick  검색 아이콘을 눌렀을 때 실행할 함수
  * @param {Function} onMenuClick    (모바일) 메뉴 아이콘을 눌렀을 때 실행할 함수
  */
-const DEFAULT_MENUS = [
-  { title: '관람', items: [] },
-  { title: '전시', items: [] },
-  { title: '교육', items: [] },
-  { title: '문화프로그램', items: [] },
-  { title: '라이브러리·소장품', items: [] },
-  { title: '소식·홍보', items: [] },
-  { title: '미술관소개', items: [] },
-]
-
-function Header({ menus = DEFAULT_MENUS, homeHref = '/', loginHref, onSearchClick, onMenuClick }) {
+function Header({ menus = MENUS, homeHref = '/', loginHref, onSearchClick, onMenuClick }) {
   return (
     <header className="header">
       <div className="header__top">

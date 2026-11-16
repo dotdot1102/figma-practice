@@ -27,7 +27,7 @@ import './ExhibitionDetailPage.css'
  *   데스크탑 — Figma desktop3 (544:11575) · desktop4 (587:12423):
  *     현재전시카드 + 오른쪽 달력·시간·[예약하기] → 예약 확정 팝업(d/팝업창) → [예약확정] → 메인
  *   공통 — 관람·예약 유의사항 / 지도 / 오시는 길
- *   ※ 유의사항·지도·오시는 길은 시안에 광교 내용만 있어, 광교 전시에서만 보여 줌
+ *   ※ 유의사항·지도·오시는 길은 전시가 열리는 관(exhibition.museum)의 안내(data/venues.js)로 보여 줌
  *
  * @param {string} id  전시 id (주소 #/exhibitions/<id>)
  */
@@ -173,7 +173,32 @@ function ExhibitionDetailPage({ id }) {
                       <div className="exhibition-detail-page__mobile">
                         <MapMuseum name={venue.mapName} />
                       </div>
-                      <MMap imageSrc={venue.mapSrc} imageAlt={venue.mapAlt} />
+                      {venue.mapSrc ? (
+                        <MMap imageSrc={venue.mapSrc} imageAlt={venue.mapAlt} />
+                      ) : venue.mapEmbedUrl ? (
+                        // 지도 이미지가 없는 관 — 구글 지도 임베드 (지도 자리 크기 그대로)
+                        <div className="m-map">
+                          <iframe
+                            className="exhibition-detail-page__map-embed"
+                            src={venue.mapEmbedUrl}
+                            title={`${venue.mapName} 위치 지도`}
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            allowFullScreen
+                          />
+                        </div>
+                      ) : (
+                        // 지도 이미지가 없는 관 — 지도 서비스로 연결
+                        <a
+                          className="exhibition-detail-page__map-link"
+                          href={venue.mapUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {venue.mapName} 위치를 지도 서비스에서 보기
+                          <span className="sr-only">(새 창)</span>
+                        </a>
+                      )}
                     </div>
 
                     {/* 지도본문 — 주소·전화·지하철·버스·주차 */}
@@ -182,26 +207,34 @@ function ExhibitionDetailPage({ id }) {
                         <dt>주소</dt>
                         <dd>{venue.address}</dd>
                       </div>
-                      <div className="exhibition-detail-page__row exhibition-detail-page__row--inline">
-                        <dt>전화</dt>
-                        <dd>
-                          <a href={`tel:${venue.phone}`}>{venue.phone}</a>
-                        </dd>
-                      </div>
-                      <div className="exhibition-detail-page__row">
-                        <dt>지하철</dt>
-                        <dd>
-                          <span className="exhibition-detail-page__subway">
-                            <SubwayLine line={venue.subway.line} />
-                            <span>
-                              {venue.subway.station[0]}
-                              <br />
-                              {venue.subway.station[1]}
+                      {venue.phone && (
+                        <div className="exhibition-detail-page__row exhibition-detail-page__row--inline">
+                          <dt>전화</dt>
+                          <dd>
+                            <a href={`tel:${venue.phone}`}>{venue.phone}</a>
+                          </dd>
+                        </div>
+                      )}
+                      {venue.subway && (
+                        <div className="exhibition-detail-page__row">
+                          <dt>지하철</dt>
+                          <dd>
+                            <span
+                              className={`exhibition-detail-page__subway${
+                                venue.subway.line === '신분당' ? ' exhibition-detail-page__subway--sinbundang' : ''
+                              }`}
+                            >
+                              <SubwayLine line={venue.subway.line} />
+                              <span>
+                                {venue.subway.station[0]}
+                                <br />
+                                {venue.subway.station[1]}
+                              </span>
                             </span>
-                          </span>
-                          <span>{venue.subway.guide}</span>
-                        </dd>
-                      </div>
+                            <span>{venue.subway.guide}</span>
+                          </dd>
+                        </div>
+                      )}
                       <div className="exhibition-detail-page__row">
                         <dt>버스</dt>
                         <dd className="exhibition-detail-page__bus">
@@ -213,9 +246,9 @@ function ExhibitionDetailPage({ id }) {
                       <div className="exhibition-detail-page__row">
                         <dt>주차장 이용안내</dt>
                         <dd>
-                          {venue.parking[0]}
-                          <br />
-                          {venue.parking[1]}
+                          {venue.parking.map((text) => (
+                            <span key={text}>{text}</span>
+                          ))}
                         </dd>
                       </div>
                     </dl>
